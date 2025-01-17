@@ -1,7 +1,42 @@
 <!DOCTYPE html>
+
 <html>
-<body style="background-color=black;">
-<h1>Hello World</h1>
-<p>I'm hosted with GitHub Pages.</p>
+
+<head>
+    <script src=js/index.js></script>
+    <link rel="stylesheet" href="css/index.css">
+</head>
+<
+<body style="background-color:black;">  <!--https://dribbble.com/shots/5844983-Sub-Nav-Interaction-Concept-->
+    <nav class="navigationWrapper">
+        <div class="logoWrapper">
+            <span class="stylish">Stylish</span>
+            <span class="logo">Logo</span>
+        </div>
+        <ul class="navigation">
+            <li class="parent"><a class="link" href="#">Home</a></li>
+            <li class="parent"><a class="link" href="#">About</a></li>
+            <li class="parent" id="clients">
+                <a class="link" href="#"><i class="fas fa-minus"></i> Clients <i class="fas fa-plus"></i></a>
+                <ul class="subnavigation">
+                    <li><a class="link" href="#">Burger King</a></li>
+                    <li><a class="link" href="#">Southwest Airlines</a></li>
+                    <li><a class="link" href="#">Levi Strauss</a></li>
+                </ul>
+            </li>
+            <li class="parent" id="services">
+                <a class="link" href="#"><i class="fas fa-minus"></i> Services <i class="fas fa-plus"></i></a>
+                <ul class="subnavigation">
+                    <li><a class="link" href="#">Print Design</a></li>
+                    <li><a class="link" href="#">Web Design</a></li>
+                    <li><a class="link" href="#">Mobile App Development</a></li>
+                </ul>
+            </li>
+            <li class="parent"><a class="link" href="#">Contact</a></li>
+        </ul>
+    </nav>
+    <h1>Hello World</h1>
+    <p>I'm hosted with GitHub Pages.</p>
 </body>
+
 </html>
