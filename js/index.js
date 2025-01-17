@@ -1,3 +1,5 @@
+
+$("document").ready(function () {
 var clients = document.getElementById('clients');
 var services = document.getElementById('services');
 
@@ -10,3 +12,5 @@ services.addEventListener('click', function() {
   $(services).toggleClass("active");
   $(".parent:not(#services)").toggleClass("invisible");
 }, false);
+
+});

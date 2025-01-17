@@ -1,5 +1,55 @@
+html {
+    background: #111;
+    padding: 1em;
+    font-family: "Jersey 15", serif;
+    font-weight: 400;
+    font-style: normal;
+    color: #eee;
+    font-size: 1.5em;
+    line-height: 1;
+    text-shadow: 0.06rem 0 0.06rem #ea36af, -0.125rem 0 0.06rem #75fa69;
+    letter-spacing: 0.125em;
+    animation-duration: 0.01s;
+    animation-name: textflicker;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+}
+
+h1 {
+    font-size: 5em;
+    text-align: center;
+}
+
+a {
+    color: white;
+}
+
+@media screen and (min-width: 1200px) {
+    body {
+        margin-left: 20rem;
+        margin-right: 20rem;
+    }
+}
+
+@media screen and (min-width: 600px) {
+    body {
+        margin-left: 5em;
+        margin-right: 5em;
+    }
+}
+
+@keyframes textflicker { /*https://github.com/D3nn7/crt-css/blob/master/src/style.css*/
+    from {
+        text-shadow: 1px 0 0 #ea36af, -2px 0 0 #75fa69;
+    }
+
+    to {
+        text-shadow: 2px 0.5px 2px #ea36af, -1px -0.5px 2px #75fa69;
+    }
+}
+
 body {
-    font-family: "Roboto", sans-serif;
+    
     margin: 0;
     padding: 0;
     display: flex;
@@ -7,22 +57,11 @@ body {
     align-items: center;
     justify-content: center;
     height: 100vh;
-    background: linear-gradient(45deg, #ea4f4c 0%, #6d0019 100%);
-  
-    .signature {
-      font-style: italic;
-      font-size: 12px;
-      color: #212121;
-      padding-top: 15px;
-      transition: all 0.3s ease-in-out;
-      
-      &:hover {
-        color: white;
-      }
-    }
-  }
-  
-  .navigationWrapper {
+    background: linear-gradient(45deg, #000000 0%, #4b4b4b 100%);
+    color: #ffffff;
+}
+
+.navigationWrapper {
     position: relative;
     display: flex;
     align-items: center;
@@ -33,124 +72,124 @@ body {
     color: white;
     text-transform: uppercase;
     overflow: hidden;
-    width: 600px;
-  
+    width: 85vw;
+
     .logoWrapper {
-      display: flex;
-  
-      .stylish {
-        font-weight: bold;
-      }
-  
-      .logo {
-        padding-left: 4px;
-        color: #ea4f4c;
-      }
+        display: flex;
+
+        .stylish {
+            font-weight: bold;
+        }
+
+        .logo {
+            padding-left: 4px;
+            color: #ea4f4c;
+        }
     }
-  
+
     .navigation {
-      display: flex;
-      list-style-type: none;
-  
-      li {
-        opacity: 1;
+        display: flex;
         list-style-type: none;
-        color: white;
-        text-decoration: none;
-        transition: all 0.3s ease-in-out;
-      }
-  
-      .parent {
-        padding: 0 10px;
-        cursor: pointer;
-  
-        .link {
-          position: relative;
-          display: flex;
-          align-items: center;
-          text-decoration: none;
-          transition: all 0.3s ease-in-out;
-          color: white;
-  
-          &:hover {
-            color: #ea4f4c;
-          }
-  
-          .fa-minus {
-            opacity: 0;
-            transition: all 0.3s ease-in-out;
-            position: absolute;
-            left: -16px;
-            top: 3px;
-          }
-  
-          .fa-plus {
+
+        li {
             opacity: 1;
+            list-style-type: none;
+            color: white;
+            text-decoration: none;
             transition: all 0.3s ease-in-out;
-          }
-  
-          .fas {
-            color: #ea4f4c;
-            margin: -2px 4px 0;
-            font-size: 10px;
+        }
+
+        .parent {
+            padding: 0 10px;
+            cursor: pointer;
+
+            .link {
+                position: relative;
+                display: flex;
+                align-items: center;
+                text-decoration: none;
+                transition: all 0.3s ease-in-out;
+                color: white;
+
+                &:hover {
+                    color: #ea4f4c;
+                }
+
+                .fa-minus {
+                    opacity: 0;
+                    transition: all 0.3s ease-in-out;
+                    position: absolute;
+                    left: -16px;
+                    top: 3px;
+                }
+
+                .fa-plus {
+                    opacity: 1;
+                    transition: all 0.3s ease-in-out;
+                }
+
+                .fas {
+                    color: #ea4f4c;
+                    margin: -2px 4px 0;
+                    font-size: 10px;
+                    transition: all 0.3s ease-in-out;
+                }
+            }
+        }
+
+        .subnavigation {
+            display: none;
+            list-style-type: none;
+            width: 500px;
+            position: absolute;
+            top: 40%;
+            left: 25%;
+            margin: auto;
             transition: all 0.3s ease-in-out;
-          }
+            background-color: #222;
+
+            li a {
+                font-size: 17px;
+                padding: 0 5px;
+            }
         }
-      }
-  
-      .subnavigation {
-        display: none;
-        list-style-type: none;
-        width: 500px;
-        position: absolute;
-        top: 40%;
-        left: 25%;
-        margin: auto;
-        transition: all 0.3s ease-in-out;
-        background-color: #222;
-  
-        li a {
-          font-size: 17px;
-          padding: 0 5px;
-        }
-      }
     }
-  }
-  
-  .active.parent {
+}
+
+.active.parent {
     transform: translate(-40px, -25px);
+
     .link {
-      font-size: 12px;
-  
-      .fa-minus {
-        opacity: 1 !important;
-        font-size: 8px;
-      }
-  
-      .fa-plus {
-        opacity: 0 !important;
-      }
+        font-size: 0.7em;
+
+        .fa-minus {
+            opacity: 1 !important;
+            font-size: 0.5em;
+        }
+
+        .fa-plus {
+            opacity: 0 !important;
+        }
     }
-  
+
     .subnavigation {
-      display: flex;
+        display: flex;
     }
-  }
-  
-  .active#clients {
+}
+
+.active#clients {
     .subnavigation {
-      transform: translate(-150px, 17px);
+        transform: translate(-150px, 17px);
     }
-  }
-  
-  .active#services {
+}
+
+.active#services {
     .subnavigation {
-      transform: translate(-290px, 17px);
+        transform: translate(-290px, 17px);
     }
-  }
-  
-  .invisible {
+}
+
+.invisible {
     opacity: 0 !important;
     transform: translate(50px, 0);
-  }
-  
+}
